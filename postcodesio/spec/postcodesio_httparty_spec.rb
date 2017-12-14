@@ -43,7 +43,13 @@ describe "Testing postcodesio" do
       expect(@file.get_single_eastings(a)).to be_nil
     else
       expect(@file.get_single_eastings(a)).to be_kind_of(Integer)
-      @file.get_postcodes_results(b).each do |postcode|
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if @file.get_postcode(a).include?("GY") || @file.get_postcode(a).include?("IM")
+        expect(postcode["result"]["eastings"]).to be_nil
+
+      else
         expect(postcode["result"]["eastings"]).to be_kind_of(Integer)
       end
     end
@@ -54,7 +60,13 @@ describe "Testing postcodesio" do
       expect(@file.get_single_northings(a)).to be_nil
     else
       expect(@file.get_single_northings(a)).to be_kind_of(Integer)
-      @file.get_postcodes_results(b).each do |postcode|
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if @file.get_postcode(a).include?("GY") || @file.get_postcode(a).include?("IM")
+        expect(postcode["result"]["northings"]).to be_nil
+
+      else
         expect(postcode["result"]["northings"]).to be_kind_of(Integer)
       end
     end
@@ -64,6 +76,22 @@ describe "Testing postcodesio" do
     expect(@file.get_single_country(a)).to be_kind_of(String)
     @file.get_postcodes_results(b).each do |postcode|
       expect(postcode["result"]["country"]).to be_kind_of(String)
+    end
+  end
+
+  it "should have a nhs-ha that is a string or nil" do
+    if @file.get_single_nhs(a) == nil
+      expect (@file.get_single_nhs(a)).to be_nil
+    else
+      expect(@file.get_single_nhs(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["nhs_na"] == nil
+        expect(postcode["result"]["nhs_na"]).to be_nil
+      else
+        expect(postcode["result"]["nhs_na"]).to be_kind_of(String)
+      end
     end
   end
 
