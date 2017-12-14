@@ -95,4 +95,18 @@ describe "Testing postcodesio" do
     end
   end
 
+  it "should have a longitude that is a float" do
+    expect(@file.get_single_longitude(a)).to be_kind_of(Float)
+    @file.get_postcodes_results(b).each do |postcode|
+      expect(postcode["result"]["longitude"]).to be_kind_of(Float)
+    end
+  end
+
+  it "should have a latitude that is a float" do
+    expect(@file.get_single_longitude(a)).to be_kind_of(Float)
+    @file.get_postcodes_results(b).each do |postcode|
+      expect(postcode["result"]["latitude"]).to be_kind_of(Float)
+    end
+  end
+
 end

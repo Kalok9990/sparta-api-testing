@@ -57,10 +57,18 @@ class Postcodesio
     get_postcode_result(postcode)["nhs_ha"]
   end
 
+  def get_single_longitude(postcode)
+    get_postcode_result(postcode)["longitude"]
+  end
+
+  def get_single_latitude(postcode)
+    get_postcode_result(postcode)["latitude"]
+  end
+
 end
 
 x=Postcodesio.new
 
 # puts x.get_postcodes(["b601ja", "tq60nr", "ox27dr"])
-puts x.get_single_nhs("b601ja")
+# puts x.get_single_nhs("b601ja")
 # puts x.get_multiple_postcodes(["b601ja", "tq60nr", "ox27dr"])["result"]
