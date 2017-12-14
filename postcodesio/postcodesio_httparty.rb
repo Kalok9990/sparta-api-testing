@@ -57,6 +57,18 @@ class Postcodesio
     get_postcode_result(postcode)["nhs_ha"]
   end
 
+  def get_single_admin_county(postcode)
+    get_postcode_result(postcode)["admin_county"]
+  end
+
+  def get_single_admin_district(postcode)
+    get_postcode_result(postcode)["admin_district"]
+  end
+
+  def get_single_admin_ward(postcode)
+    get_postcode_result(postcode)["admin_ward"]
+  end
+
   def get_single_longitude(postcode)
     get_postcode_result(postcode)["longitude"]
   end
@@ -75,6 +87,26 @@ class Postcodesio
 
   def get_single_pct(postcode)
     get_postcode_result(postcode)["primary_care_trust"]
+  end
+
+  def get_single_region(postcode)
+    get_postcode_result(postcode)["region"]
+  end
+
+  def get_single_parish(postcode)
+    get_postcode_result(postcode)["parish"]
+  end
+
+  def get_single_lsoa(postcode)
+    get_postcode_result(postcode)["lsoa"]
+  end
+
+  def get_single_msoa(postcode)
+    get_postcode_result(postcode)["msoa"]
+  end
+
+  def get_single_ccg(postcode)
+    get_postcode_result(postcode)["ccg"]
   end
 end
 

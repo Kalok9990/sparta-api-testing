@@ -95,6 +95,54 @@ describe "Testing postcodesio" do
     end
   end
 
+  it "should have a admin county that is a string or nil" do
+    if @file.get_single_admin_county(a) == nil
+      expect (@file.get_single_admin_county(a)).to be_nil
+    else
+      expect(@file.get_single_admin_county(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["admin_county"] == nil
+        expect(postcode["result"]["admin_county"]).to be_nil
+      else
+        expect(postcode["result"]["admin_county"]).to be_kind_of(String)
+      end
+    end
+  end
+
+  it "should have a admin district that is a string or nil" do
+    if @file.get_single_admin_district(a) == nil
+      expect (@file.get_single_admin_district(a)).to be_nil
+    else
+      expect(@file.get_single_admin_district(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["admin_district"] == nil
+        expect(postcode["result"]["admin_district"]).to be_nil
+      else
+        expect(postcode["result"]["admin_district"]).to be_kind_of(String)
+      end
+    end
+  end
+
+  it "should have a admin ward that is a string or nil" do
+    if @file.get_single_admin_ward(a) == nil
+      expect (@file.get_single_admin_ward(a)).to be_nil
+    else
+      expect(@file.get_single_admin_ward(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["admin_ward"] == nil
+        expect(postcode["result"]["admin_ward"]).to be_nil
+      else
+        expect(postcode["result"]["admin_ward"]).to be_kind_of(String)
+      end
+    end
+  end
+
   it "should have a longitude that is a float" do
     expect(@file.get_single_longitude(a)).to be_kind_of(Float)
     @file.get_postcodes_results(b).each do |postcode|
@@ -153,6 +201,86 @@ describe "Testing postcodesio" do
         expect(postcode["result"]["primary_care_trust"]).to be_nil
       else
         expect(postcode["result"]["primary_care_trust"]).to be_kind_of(String)
+      end
+    end
+  end
+
+  it "should have a region that is a string or nil" do
+    if @file.get_single_region(a) == nil
+      expect (@file.get_single_region(a)).to be_nil
+    else
+      expect(@file.get_single_region(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["region"] == nil
+        expect(postcode["result"]["region"]).to be_nil
+      else
+        expect(postcode["result"]["region"]).to be_kind_of(String)
+      end
+    end
+  end
+
+  it "should have a parish that is a string or nil" do
+    if @file.get_single_parish(a) == nil
+      expect (@file.get_single_parish(a)).to be_nil
+    else
+      expect(@file.get_single_parish(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["parish"] == nil
+        expect(postcode["result"]["parish"]).to be_nil
+      else
+        expect(postcode["result"]["parish"]).to be_kind_of(String)
+      end
+    end
+  end
+
+  it "should have a lsoa that is a string or nil" do
+    if @file.get_single_lsoa(a) == nil
+      expect (@file.get_single_lsoa(a)).to be_nil
+    else
+      expect(@file.get_single_lsoa(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["lsoa"] == nil
+        expect(postcode["result"]["lsoa"]).to be_nil
+      else
+        expect(postcode["result"]["lsoa"]).to be_kind_of(String)
+      end
+    end
+  end
+
+  it "should have a msoa that is a string or nil" do
+    if @file.get_single_msoa(a) == nil
+      expect (@file.get_single_msoa(a)).to be_nil
+    else
+      expect(@file.get_single_msoa(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["msoa"] == nil
+        expect(postcode["result"]["msoa"]).to be_nil
+      else
+        expect(postcode["result"]["msoa"]).to be_kind_of(String)
+      end
+    end
+  end
+
+  it "should have a ccg that is a string or nil" do
+    if @file.get_single_ccg(a) == nil
+      expect (@file.get_single_ccg(a)).to be_nil
+    else
+      expect(@file.get_single_ccg(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["ccg"] == nil
+        expect(postcode["result"]["ccg"]).to be_nil
+      else
+        expect(postcode["result"]["ccg"]).to be_kind_of(String)
       end
     end
   end
