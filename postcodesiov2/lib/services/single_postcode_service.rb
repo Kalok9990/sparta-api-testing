@@ -20,8 +20,125 @@ class SinglePostcodeService
     @single_postcode_data["status"]
   end
 
+  def get_postcode
+    get_result["postcode"]
+  end
 
+  def get_single_quality
+    get_result["quality"]
+  end
 
+  def get_single_eastings
+    get_result["eastings"]
+  end
+
+  def get_single_northings
+    get_result["northings"]
+  end
+
+  def get_single_country
+    get_result["country"]
+  end
+
+  def get_single_nhs
+    get_result["nhs_ha"]
+  end
+
+  def get_single_admin_county
+    get_result["admin_county"]
+  end
+
+  def get_single_admin_district
+    get_result["admin_district"]
+  end
+
+  def get_single_admin_ward
+    get_result["admin_ward"]
+  end
+
+  def get_single_longitude
+    get_result["longitude"]
+  end
+
+  def get_single_latitude
+    get_result["latitude"]
+  end
+
+  def get_single_parliamentary_constituency
+    get_result["parliamentary_constituency"]
+  end
+
+  def get_single_eer
+    get_result["european_electoral_region"]
+  end
+
+  def get_single_pct
+    get_result["primary_care_trust"]
+  end
+
+  def get_single_region
+    get_result["region"]
+  end
+
+  def get_single_parish
+    get_result["parish"]
+  end
+
+  def get_single_lsoa
+    get_result["lsoa"]
+  end
+
+  def get_single_msoa
+    get_result["msoa"]
+  end
+
+  def get_single_ccg
+    get_result["ccg"]
+  end
+
+  def get_single_nuts
+    get_result["nuts"]
+  end
+
+  def get_incode
+    get_result["incode"]
+  end
+
+  def get_outcode
+    get_result["outcode"]
+  end
+
+  def get_code
+    get_result["codes"]
+  end
+
+  def get_code_addistrict
+    get_code["admin_district"]
+  end
+
+  def get_code_adcounty
+    get_code["admin_county"]
+  end
+
+  def get_code_adward
+    get_code["admin_ward"]
+  end
+
+  def get_code_parish
+    get_code["parish"]
+  end
+
+  def get_code_parliamentary_constituency
+    get_code["parliamentary_constituency"]
+  end
+
+  def get_code_ccg
+    get_code["ccg"]
+  end
+
+  def get_code_nuts
+    get_code["nuts"]
+  end
 end
 
 call = SinglePostcodeService.new
