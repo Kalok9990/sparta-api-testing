@@ -1,6 +1,5 @@
 require "json"
-require "httparty"
-require_relative "../postcodesio_httparty"
+require_relative "../lib/postcode"
 
 RSpec.configure do|config|
   config.color = true
