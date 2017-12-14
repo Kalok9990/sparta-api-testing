@@ -125,4 +125,36 @@ describe "Testing postcodesio" do
     end
   end
 
+  it "should have a european electoral region that is a string or nil" do
+    if @file.get_single_eer(a) == nil
+      expect (@file.get_single_eer(a)).to be_nil
+    else
+      expect(@file.get_single_eer(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["european_electoral_region"] == nil
+        expect(postcode["result"]["european_electoral_region"]).to be_nil
+      else
+        expect(postcode["result"]["european_electoral_region"]).to be_kind_of(String)
+      end
+    end
+  end
+
+  it "should have a primary care trust that is a string or nil" do
+    if @file.get_single_pct(a) == nil
+      expect (@file.get_single_pct(a)).to be_nil
+    else
+      expect(@file.get_single_pct(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["primary_care_trust"] == nil
+        expect(postcode["result"]["primary_care_trust"]).to be_nil
+      else
+        expect(postcode["result"]["primary_care_trust"]).to be_kind_of(String)
+      end
+    end
+  end
+
 end

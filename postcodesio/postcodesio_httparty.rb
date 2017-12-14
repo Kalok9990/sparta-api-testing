@@ -69,6 +69,13 @@ class Postcodesio
     get_postcode_result(postcode)["parliamentary_constituency"]
   end
 
+  def get_single_eer(postcode)
+    get_postcode_result(postcode)["european_electoral_region"]
+  end
+
+  def get_single_pct(postcode)
+    get_postcode_result(postcode)["primary_care_trust"]
+  end
 end
 
 x=Postcodesio.new
