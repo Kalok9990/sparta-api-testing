@@ -65,6 +65,10 @@ class Postcodesio
     get_postcode_result(postcode)["latitude"]
   end
 
+  def get_single_parliamentary_constituency(postcode)
+    get_postcode_result(postcode)["parliamentary_constituency"]
+  end
+
 end
 
 x=Postcodesio.new

@@ -109,4 +109,20 @@ describe "Testing postcodesio" do
     end
   end
 
+  it "should have a parliamentary constituency that is a string or nil" do
+    if @file.get_single_parliamentary_constituency(a) == nil
+      expect (@file.get_single_parliamentary_constituency(a)).to be_nil
+    else
+      expect(@file.get_single_parliamentary_constituency(a)).to be_kind_of(String)
+    end
+
+    @file.get_postcodes_results(b).each do |postcode|
+      if postcode["result"]["parliamentary_constituency"] == nil
+        expect(postcode["result"]["parliamentary_constituency"]).to be_nil
+      else
+        expect(postcode["result"]["parliamentary_constituency"]).to be_kind_of(String)
+      end
+    end
+  end
+
 end
