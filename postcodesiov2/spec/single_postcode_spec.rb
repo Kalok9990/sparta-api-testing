@@ -170,32 +170,60 @@ describe "Postcodesio" do
       expect(@postcodesio.get_code).to be_kind_of(Hash)
     end
 
-    it "should have an admin_district in codes as a String" do
-      expect(@postcodesio.get_code_addistrict).to be_kind_of(String)
+    it "should have an admin_district in codes as a String or nil" do
+      if @postcodesio.get_code_addistrict == nil
+        expect (@postcodesio.get_code_addistrict).to be_nil
+      else
+        expect(@postcodesio.get_code_addistrict).to be_kind_of(String)
+      end
     end
 
-    it "should have an admin_county in codes as a String" do
-      expect(@postcodesio.get_code_adcounty).to be_kind_of(String)
+    it "should have an admin_county in codes as a String or nil" do
+      if @postcodesio.get_code_adcounty == nil
+        expect (@postcodesio.get_code_adcounty).to be_nil
+      else
+        expect(@postcodesio.get_code_adcounty).to be_kind_of(String)
+      end
     end
 
-    it "should have an admin_ward in codes as a String" do
-      expect(@postcodesio.get_code_adward).to be_kind_of(String)
+    it "should have an admin_ward in codes as a String or nil" do
+      if @postcodesio.get_code_adward == nil
+        expect (@postcodesio.get_code_adward).to be_nil
+      else
+        expect(@postcodesio.get_code_adward).to be_kind_of(String)
+      end
     end
 
-    it "should have a parish in codes as a String" do
-      expect(@postcodesio.get_code_parish).to be_kind_of(String)
+    it "should have a parish in codes as a String or nil" do
+      if @postcodesio.get_code_parish == nil
+        expect (@postcodesio.get_code_parish).to be_nil
+      else
+        expect(@postcodesio.get_code_parish).to be_kind_of(String)
+      end
     end
 
-    it "should have a parliamentary_constituency in codes as a String" do
-      expect(@postcodesio.get_code_parliamentary_constituency).to be_kind_of(String)
+    it "should have a parliamentary_constituency in codes as a String or nil" do
+      if @postcodesio.get_code_parliamentary_constituency == nil
+        expect (@postcodesio.get_code_parliamentary_constituency).to be_nil
+      else
+        expect(@postcodesio.get_code_parliamentary_constituency).to be_kind_of(String)
+      end
     end
 
-    it "should have a ccg in codes as a String" do
-      expect(@postcodesio.get_code_ccg).to be_kind_of(String)
+    it "should have a ccg in codes as a String or nil" do
+      if @postcodesio.get_code_ccg == nil
+        expect (@postcodesio.get_code_ccg).to be_nil
+      else
+        expect(@postcodesio.get_code_ccg).to be_kind_of(String)
+      end
     end
 
-    it "should have a nuts in codes as a String" do
-      expect(@postcodesio.get_code_nuts).to be_kind_of(String)
+    it "should have a nuts in codes as a String or nil" do
+      if @postcodesio.get_code_nuts == nil
+        expect (@postcodesio.get_code_nuts).to be_nil
+      else
+        expect(@postcodesio.get_code_nuts).to be_kind_of(String)
+      end
     end
   end
 end

@@ -58,41 +58,25 @@ describe "Postcodesio" do
 
     it "should have a nhs-ha that is a string or nil" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        if @postcodesios.get_postcodes_nhs(postcode) == nil
-          expect(@postcodesios.get_postcodes_nhs(postcode)).to be_nil
-        else
-          expect(@postcodesios.get_postcodes_nhs(postcode)).to be_kind_of(String)
-        end
+          expect(@postcodesios.get_postcodes_nhs(postcode)).to be_kind_of(String).or be_nil
       end
     end
 
     it "should have a admin county that is a string or nil" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        if @postcodesios.get_postcodes_admin_county(postcode) == nil
-          expect(@postcodesios.get_postcodes_admin_county(postcode)).to be_nil
-        else
-          expect(@postcodesios.get_postcodes_admin_county(postcode)).to be_kind_of(String)
-        end
+          expect(@postcodesios.get_postcodes_admin_county(postcode)).to be_kind_of(String).or be_nil
       end
     end
 
     it "should have a admin district that is a string or nil" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        if @postcodesios.get_postcodes_admin_district(postcode) == nil
-          expect(@postcodesios.get_postcodes_admin_district(postcode)).to be_nil
-        else
-          expect(@postcodesios.get_postcodes_admin_district(postcode)).to be_kind_of(String)
-        end
+          expect(@postcodesios.get_postcodes_admin_district(postcode)).to be_kind_of(String).or be_nil
       end
     end
 
     it "should have a admin ward that is a string or nil" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        if @postcodesios.get_postcodes_admin_ward(postcode) == nil
-          expect(@postcodesios.get_postcodes_admin_ward(postcode)).to be_nil
-        else
-          expect(@postcodesios.get_postcodes_admin_ward(postcode)).to be_kind_of(String)
-        end
+          expect(@postcodesios.get_postcodes_admin_ward(postcode)).to be_kind_of(String).or be_nil
       end
     end
 
@@ -218,43 +202,71 @@ describe "Postcodesio" do
 
     it "should have an admin_district in codes as a String" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        expect(@postcodesios.get_codes_addistrict(postcode)).to be_kind_of(String)
+        if @postcodesios.get_codes_addistrict(postcode) == nil
+          expect(@postcodesios.get_codes_addistrict(postcode)).to be_nil
+        else
+          expect(@postcodesios.get_codes_addistrict(postcode)).to be_kind_of(String)
+        end
       end
     end
 
     it "should have an admin_county in codes as a String" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        expect(@postcodesios.get_codes_adcounty(postcode)).to be_kind_of(String)
+        if @postcodesios.get_codes_adcounty(postcode) == nil
+          expect(@postcodesios.get_codes_adcounty(postcode)).to be_nil
+        else
+          expect(@postcodesios.get_codes_adcounty(postcode)).to be_kind_of(String)
+        end
       end
     end
 
     it "should have an admin_ward in codes as a String" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        expect(@postcodesios.get_codes_adward(postcode)).to be_kind_of(String)
+        if @postcodesios.get_codes_adward(postcode) == nil
+          expect(@postcodesios.get_codes_adward(postcode)).to be_nil
+        else
+          expect(@postcodesios.get_codes_adward(postcode)).to be_kind_of(String)
+        end
       end
     end
 
     it "should have a parish in codes as a String" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        expect(@postcodesios.get_codes_parish(postcode)).to be_kind_of(String)
+        if @postcodesios.get_codes_parish(postcode) == nil
+          expect(@postcodesios.get_codes_parish(postcode)).to be_nil
+        else
+          expect(@postcodesios.get_codes_parish(postcode)).to be_kind_of(String)
+        end
       end
     end
 
     it "should have a parliamentary_constituency in codes as a String" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        expect(@postcodesios.get_codes_parliamentary_constituency(postcode)).to be_kind_of(String)
+        if @postcodesios.get_codes_parliamentary_constituency(postcode) == nil
+          expect(@postcodesios.get_codes_parliamentary_constituency(postcode)).to be_nil
+        else
+          expect(@postcodesios.get_codes_parliamentary_constituency(postcode)).to be_kind_of(String)
+        end
       end
     end
 
     it "should have a ccg in codes as a String" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        expect(@postcodesios.get_codes_ccg(postcode)).to be_kind_of(String)
+        if @postcodesios.get_codes_ccg(postcode) == nil
+          expect(@postcodesios.get_codes_ccg(postcode)).to be_nil
+        else
+          expect(@postcodesios.get_codes_ccg(postcode)).to be_kind_of(String)
+        end
       end
     end
 
     it "should have a nuts in codes as a String" do
       @postcodesios.get_postcodes_results.each do |postcode|
-        expect(@postcodesios.get_codes_nuts(postcode)).to be_kind_of(String)
+        if @postcodesios.get_codes_nuts(postcode) == nil
+          expect(@postcodesios.get_codes_nuts(postcode)).to be_nil
+        else
+          expect(@postcodesios.get_codes_nuts(postcode)).to be_kind_of(String)
+        end
       end
     end
   end
